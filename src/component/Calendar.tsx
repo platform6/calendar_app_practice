@@ -71,10 +71,11 @@ const Calendar: React.FC = () => {
 
         days.push(
           <Box
-            key={day.toISOString()}
-            textAlign="center"
+            display="flex"
             alignItems="center"
             justifyContent="center"
+            minH={"80px"}
+            key={day.toISOString()}
             p={2}
             bg={isSelected ? "green.400" : isToday ? "gray.500" : "white"}
             color={
@@ -85,7 +86,6 @@ const Calendar: React.FC = () => {
                 : "black"
             }
             borderRadius={isSelected || isToday ? "50%" : "none"}
-            aspectRatio={1}
             onClick={() => {
               if (isFutureOrToday) {
                 setSelectedDate(currentDay);
