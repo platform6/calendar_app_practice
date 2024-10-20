@@ -54,7 +54,7 @@ const Calendar: React.FC = () => {
     const monthStart = startOfMonth(currentMonth);
     const monthEnd = endOfMonth(currentMonth);
     const startDate = startOfWeek(monthStart);
-    const endDate = endOfWeek(monthEnd); // End of the last week of the month
+    const endDate = endOfWeek(monthEnd);
     const rows = [];
     let days = [];
     let day = startDate;
@@ -71,12 +71,12 @@ const Calendar: React.FC = () => {
 
         days.push(
           <Box
+            key={day.toISOString()}
             display="flex"
             alignItems="center"
             justifyContent="center"
-            minH={"80px"}
-            key={day.toISOString()}
-            p={2}
+            h={"70px"}
+            m={1}
             bg={isSelected ? "green.400" : isToday ? "gray.500" : "white"}
             color={
               isSelected || isToday
